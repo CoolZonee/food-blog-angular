@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+
+footer {
+    display: flex;
+    align-self: center;
+    margin: 2rem 0;
+}
+
+.left {
+    margin: 0 $leftright-space;
+    span {
+        font-size: 0.8rem;
+    }
+}
+
+.right {
+    margin-left: auto;
+    margin-right: $leftright-space !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.fa {
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 50%;
+    transition: opacity 0.3s;
+    &:hover {
+        opacity: 100%;
+        transition: opacity 0.3s;
+    }
+}

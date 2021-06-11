@@ -1,0 +1,8 @@
+<div class="article-card__container">
+    <div class="article-card__card" *ngFor="let card of article">
+        <img src="{{ '../../../../assets/thumbnails/' + card.title + '.png' }}">
+        <span>{{ card.type | titlecase}}</span>
+        <span>{{ card.title }}</span>
+        <span>{{ card.description }}</span>
+    </div>
+</div>

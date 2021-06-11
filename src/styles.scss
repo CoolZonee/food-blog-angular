@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+$bg-color-transition: background-color 0.3s;
+$leftright-space: 8rem;
+$topbot-space: 6rem;
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+@mixin position-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin main-font-thin {
+    font-family: "Montserrat";
+    font-weight: 100;
+}
+
+@mixin main-font-light {
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+
+@mixin main-font-medium {
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+@mixin main-font-bold {
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+@mixin main-font-extra {
+    font-family: "Montserrat";
+    font-weight: 800;
+}
+
+@mixin title-font {
+    font-family: "Mrs Saint Delafield";
+    font-size: 2rem;
+}

@@ -1,0 +1,87 @@
+@import "../../../styles.scss";
+
+* {
+    @include main-font-light;
+}
+
+
+.intro {
+    &__container {
+        width: 100vw;
+        background: linear-gradient(to left, rgba(255,255,255,0) 30%, rgba(255,255,255,1)), url("../../../assets/home_bg.jpg");
+        // box-shadow: 0 0 20px #999;
+        strong {
+            @include main-font-bold;
+            font-size: 1.7rem;
+        }
+        p {
+            @include main-font-medium;
+            margin: 8% 0;
+            letter-spacing: 0.05rem;
+        }
+        button {
+            @include main-font-medium;
+            transition: $bg-color-transition;
+            cursor: pointer;
+            width: 200px;
+            height: 50px;
+            border: hidden;
+            border-radius: 5px;
+            color: white;
+            background-color: #595D69;
+
+            &:hover {
+                transition: $bg-color-transition;
+                background-color: #222;
+            }
+        }
+    }
+    &__text {
+        width: 40vw;
+        padding: 7% 0 7% $leftright-space;
+    }
+}
+
+.subscribe {
+    &__container {
+        width: 100vw;
+        height: 30vh;
+        margin: $topbot-space 0;
+        background-color: #FFF8F2;
+        display: grid;
+        grid-template-columns: 1fr 0.7fr;
+        grid-gap: 10%;
+    }
+
+    &__left {
+        margin: 0 $leftright-space;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        strong {
+            @include main-font-bold;
+            font-size: 1.5rem;
+            margin: 3% 0;
+        }
+    }
+
+    &__right {
+        @include position-center;
+        button {
+            @include main-font-medium;
+            font-size: 1rem;
+            color: white;
+            width: 300px;
+            height: 65px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFBF9D;
+            transition: $bg-color-transition;
+            &:hover {
+                background-color: #fc803e;
+                transition: $bg-color-transition;
+            }
+        }
+    }
+}
