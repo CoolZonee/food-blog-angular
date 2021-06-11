@@ -9,7 +9,15 @@
       <button>Popular recipes</button>
     </div>
   </div>
-  <app-article-card></app-article-card>
+  <div class="article-card__container" >
+    <div  #articleCard class="article-card__slide" >
+      <div *ngFor="let a of article" app-article-card [articleObj]="a"></div>
+    </div>
+    <div class="article-card__button">
+      <button (click)="moveLeft()">&#60;</button>
+      <button (click)="moveRight()">&#62;</button>
+    </div>
+  </div>
   <div class="subscribe__container">
     <section class="subscribe__left">
       <strong>Subscribe to the best food newsletter</strong>

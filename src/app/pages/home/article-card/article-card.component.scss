@@ -1,14 +1,9 @@
 @import "../../../../styles.scss";
 
 .article-card {
-    &__container {
-        margin: $topbot-space $leftright-space;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        align-self: center;
-        grid-gap: 2rem;
-    }
     &__card {
+        max-width: 300px;   
+        position: relative;
         display: flex;
         flex-direction: column;
         border-radius: 10px;
@@ -20,9 +15,6 @@
             transition: box-shadow, 0.3s;
             box-shadow: 0 0 20px #DDD;
         }   
-        img {
-            max-width: 350px;        
-        }
         span:nth-of-type(1) {
             @include main-font-medium;
             margin-top: 2rem;
@@ -38,4 +30,5 @@
             font-size: 0.9rem;
         }
     }
+    
 }

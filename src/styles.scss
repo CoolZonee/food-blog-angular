@@ -2,6 +2,13 @@ $bg-color-transition: background-color 0.3s;
 $leftright-space: 8rem;
 $topbot-space: 6rem;
 
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 body {
     margin: 0;
     padding: 0;

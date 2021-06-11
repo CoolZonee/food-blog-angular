@@ -11,6 +11,7 @@
         display: flex;
         align-items: center;
         overflow: hidden;
+        z-index: 1;
     }
     &__left {
         margin-left: $leftright-space;
