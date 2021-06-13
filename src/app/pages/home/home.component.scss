@@ -1,15 +1,31 @@
 @import "../../../styles.scss";
-
 * {
     @include main-font-light;
 }
 
-
 .intro {
     &__container {
         width: 100vw;
-        background: linear-gradient(to left, rgba(255,255,255,0) 30%, rgba(255,255,255,1)), url("../../../assets/home_bg.jpg");
-        // box-shadow: 0 0 20px #999;
+        position: relative;
+    }
+    &__slides {
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1));
+        background-size: cover;
+        height: 70vh;
+        align-items: center;
+        display: none;
+        &__fade {
+            /* Fading animation */
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+    }
+    &__text {
+        position: absolute;
+        margin-left: $leftright-space;
+        width: 40vw;
         strong {
             @include main-font-bold;
             font-size: 1.7rem;
@@ -29,20 +45,81 @@
             border-radius: 5px;
             color: white;
             background-color: #595D69;
-
             &:hover {
                 transition: $bg-color-transition;
                 background-color: #222;
             }
         }
     }
-    &__text {
-        width: 40vw;
-        padding: 7% 0 7% $leftright-space;
+    /* Position the "next button" to the right */
+    &__next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    &__prev,
+    &__next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+    &__dot {
+        position: absolute;
+        left: 50%;
+        bottom: 3%;
+        transform: translate(-50%);
+        span {
+            cursor: pointer;
+            height: 0.7rem;
+            width: 0.7rem;
+            margin: 0 0.2rem 0.2rem 0.2rem;
+            background-color: black;
+            opacity: 0.5;
+            border-radius: 50%;
+            display: inline-block;
+            transition: opacity 0.6s ease;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &__active {
+            opacity: 1 !important;
+        }
     }
 }
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
 .article-card {
-    &__container {   
+    &__container {
         background-color: #FFF8F2;
         margin-top: 7rem;
         padding-bottom: 3rem;
@@ -90,7 +167,6 @@
         grid-template-columns: 1fr 0.7fr;
         grid-gap: 10%;
     }
-
     &__left {
         margin: 0 $leftright-space;
         display: flex;
@@ -102,7 +178,6 @@
             margin: 3% 0;
         }
     }
-
     &__right {
         @include position-center;
         button {

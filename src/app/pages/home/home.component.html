@@ -1,12 +1,25 @@
 <app-top-nav-bar></app-top-nav-bar>
 <main class="main__container">
   <div class="intro__container">
-    <div class="intro__text">
-      <strong>
-        A blog for people who like simple food
-      </strong>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum dui eros, vel bibendum neque feugiat ac. Integer finibus elit mi, in pretium dolor efficitur id. </p>
-      <button>Popular recipes</button>
+    <!-- Main Text -->
+    <ng-container *ngFor="let slide of slides; index as i">
+      <div #slideShow style="background: linear-gradient(to left, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)), url('../../../assets/{{slide.title}}');" class="intro__slides intro__slides__fade">
+        <div class="intro__text">
+          <strong>
+            A blog for people who like simple food
+          </strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum dui eros, vel bibendum neque feugiat ac. Integer finibus elit mi, in pretium dolor efficitur id. </p>
+          <button>Popular recipes</button>
+        </div>
+        
+        <!-- Next and previous button -->
+        <a class="intro__prev" (click)="introPrevious()">&#10094;</a>
+        <a class="intro__next" (click)="introNext()">&#10095;</a>
+      </div>
+    </ng-container>
+    <!-- Bottom dot -->
+    <div class="intro__dot">
+      <span #dot *ngFor="let slide of slides; index as i" (click)="chgSlide(i)"></span>
     </div>
   </div>
   <div class="article-card__container" >
@@ -14,8 +27,8 @@
       <div *ngFor="let a of article" app-article-card [articleObj]="a"></div>
     </div>
     <div class="article-card__button">
-      <button (click)="moveLeft()">&#60;</button>
-      <button (click)="moveRight()">&#62;</button>
+      <button (click)="articleMoveLeft()">&#60;</button>
+      <button (click)="articleMoveRight()">&#62;</button>
     </div>
   </div>
   <div class="subscribe__container">
