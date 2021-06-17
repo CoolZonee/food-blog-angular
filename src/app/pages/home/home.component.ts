@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
     this.timer = setTimeout(() => {
       this.selectedSlide += 1;
       this.refreshSlide();
-    }, 10000);
+    }, 5000);
   }
 
   introPrevious() {
